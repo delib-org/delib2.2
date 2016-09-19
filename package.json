@@ -18,5 +18,17 @@
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delib-org/delib2.2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delib-org/delib2.2/issues"
+  },
+  "homepage": "https://github.com/delib-org/delib2.2#readme"
 }
