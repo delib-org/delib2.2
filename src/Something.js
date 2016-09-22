@@ -13,8 +13,7 @@ class Something extends React.Component {
         return (
             <div >
                 this is a new route called something, 22222
-               
-
+                <a> {this.props.location.pathname} </a> <br/>
             </div>
         );
     }
