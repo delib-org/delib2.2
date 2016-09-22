@@ -1,8 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+
 import * as firebase from 'firebase';
+
+import React from 'react';
+import ReactDOM from 'react-dom'
+import  { Router, Route, IndexRoute }  from 'react-router'
+
+// import './index.css';
+import App from './App';
+import Something from './Something';
 
 
   // Initialize Firebase
@@ -14,10 +19,13 @@ import * as firebase from 'firebase';
   };
   firebase.initializeApp(config);
 
+    ReactDOM.render((
+        <Router >
+          <Route path="/" component={App}>
+            <Route path="something" handler={Something}> </Route>
+          </Route>
+        </Router>
+    ), document.getElementById('root'));
 
 
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+// <IndexRoute> component={Featured}> </IndexRoute>

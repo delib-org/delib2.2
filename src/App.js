@@ -1,35 +1,41 @@
-import * as firebase from 'firebase';
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Link } from 'react-router';
 
-class App extends Component {
 
-constructor(){
-  super();
-  this.state = {
-    speed:10
-  }
+class App extends React.Component {
+
+    constructor(){
+      super();
+      this.state = {
+        speed:10
+      }
+    }
+    
+    render() {
+        return (
+            <div>
+                this is a new route called something <br/>
+                <a> {this.props.location.pathname} </a> <br/>
+                <Link to='something'> something </Link >
+            </div>
+        );
+    }
+// componentDidMount(){
+//    const rootRef = firebase.database().ref().child('react');
+//    const speedRef = rootRef.child('speed');
+//    speedRef.on('value', snap => {
+//      console.log(snap.val())
+//      this.setState ({
+//        speed: snap.val()
+//      });
+//    });
+//  }
+
+
 }
 
-componentDidMount(){
-   const rootRef = firebase.database().ref().child('react');
-   const speedRef = rootRef.child('speed');
-   speedRef.on('value', snap => {
-     console.log(snap.val())
-     this.setState ({
-       speed: snap.val()
-     });
-   });
- }
-
-  render() {
-    return (
-      <div className="App">
-       <h1>{this.state.speed}</h1>
-      </div>
-    );
-  }
-}
+App.childContextTypes = {
+    location: React.PropTypes.object
+};
 
 export default App;
